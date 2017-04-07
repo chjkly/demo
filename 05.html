@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用Cookie插件进行读操作</title>
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>	
+	<script type="text/javascript" src="jquery-cookie/src/jquery.cookie.js"></script>
+	<script type="text/javascript">
+		function doRead(){
+			console.log($.cookie());
+		}
+		function doReadByKey(){
+			var k=$("#key").val();
+			var v=$.cookie(k);
+			$("#value").val(v);
+		}
+
+		
+	</script>
+</head>
+<body>
+	<p>
+		<label for="name">Name:</label>
+		<input type="text" id="name">
+	</p>
+	<p>
+		<label for="pass">Pass:</label>
+		<input type="text" id="pass">
+	</p>
+	<p>
+		<input type="button" value="read" onclick="doRead()">
+	</p>
+	<p>
+		<input type="text" id="key">
+		<input type="text" id="value">
+		<input type="button" value="read" onclick="doReadByKey()">
+	</p>
+</body>
+</html>

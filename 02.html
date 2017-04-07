@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Cookie操作：写</title>
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>	
+	<script type="text/javascript">
+		function doWrite(){
+			var n=$("#name").val();
+			var now=new Date();
+			now.setTime(now.getTime()+1*60*60*1000);
+			var str="name="+encodeURIComponent(n)+";expires="+now.toGMTString();
+			console.log("n="+n)
+			console.log("encodeURIComponent(n)="+encodeURIComponent(n));
+			document.cookie=str;
+
+			n=$("#pass").val();
+			str="pass="+encodeURIComponent(n)+";expires="+now.toGMTString();
+			console.log("n="+n)
+			console.log("encodeURIComponent(n)="+encodeURIComponent(n));
+			document.cookie=str;
+		}
+
+		function writeCookie(key,value,exp){
+			var str=key+"="+value+";expires="+exp.toGMTString();
+			document.cookie=str;
+		}
+
+		function doWrite2(){
+			var n=$("#name").val();
+			var now=new Date();
+			now.setTime(now.getTime()+1*60*60*1000);
+			writeCookie("name",n,now);
+
+			n=$("#pass").val();
+			writeCookie("pass",n,now);
+		}
+	</script>
+</head>
+<body>
+	<a href="03.html">读取</a>
+	<p>
+		<label for="name">Name:</label>
+		<input type="text" id="name">
+	</p>
+	<p>
+		<label for="pass">Pass:</label>
+		<input type="text" id="pass">
+	</p>
+	<p>
+		<input type="button" value="write" onclick="doWrite()">
+		<input type="button" value="write改进" onclick="doWrite2()">
+	</p>
+</body>
+</html>

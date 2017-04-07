@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>0110课后练习</title>
+	<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+	<script type="text/javascript">
+		function doStart(){
+			var rdo=$(":radio:checked");
+			if(rdo.length==0){
+				alert("请先选择一个！");
+				return;
+			}
+			var rnd=Math.floor(Math.random()*10);
+			var user=rdo.val();
+			if(user==0 && rnd==2  ||
+				user==1 && rnd==0 ||
+				user==2 && rnd==1){
+				alert("你赢了");
+			}
+			else if(user==rnd){
+				alert("平局");
+			}
+			else{
+				alert("你输了");
+			}
+		}
+
+	</script>
+</head>
+<body>
+
+	<input type="radio" name="rdo" value="0">剪刀
+	<input type="radio" name="rdo" value="1">石头
+	<input type="radio" name="rdo" value="2">布
+	<br>
+	<input type="button" value="Start" onclick="doStart()">
+</body>
+</html>
