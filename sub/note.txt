@@ -1,0 +1,23 @@
+URL:统一资源定位符
+Uniform Resource Locator
+http://127.0.0.1:8080/0307/
+
+8个组成部分：
+必须包含2个：
+协议protocol
+主机host：域名==DNS==>IP
+可选6个：
+端口port:http==>80  https==>443
+路径path:
+资源resource
+查询字符串query string:以？开始的一段
+锚点anchro：以#开始
+身份认证authentication
+ftp://user:pwd@111.11.22.43
+
+http://127.0.0.1:8080/0307/01.html
+http://127.0.0.1:8080/0307/www.baidu.com
+
+http://www.baidu.com/
+http://www.baidu.com/
+
